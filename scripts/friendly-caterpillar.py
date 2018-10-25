@@ -8,7 +8,7 @@
 import sys, time, random
 
 def scoot_back(n):
-    sys.stdout.write('{:c}'.format(8) * n)
+    sys.stdout.write('{:c}{:c}{:c}'.format(8, 32, 8) * n)
 
 # the friendly caterpillar says:
 def get_message():
