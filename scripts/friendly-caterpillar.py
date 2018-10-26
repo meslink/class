@@ -5,7 +5,7 @@
 # or, if this file has executable permission,
 #   $ ./friendly-caterpillar.py
 
-import sys, time, random
+import sys, time, random, signal
 
 def scoot_back(n):
     sys.stdout.write('{:c}{:c}{:c}'.format(8, 32, 8) * n)
@@ -18,8 +18,18 @@ def get_message():
             'i shall hop on my bi-cy-clee and be a speedy caterpillar!']
     return msgs[random.randint(0,len(msgs)-1)]
 
+def bye():
+    def call(a,b):
+        sys.stdout.write(' bye!')
+        sys.stdout.flush()
+        time.sleep(0.5)
+        scoot_back(80)
+        sys.exit(0)
+    return call
+signal.signal(signal.SIGINT, bye())
+
 cs = '/\\'
-tu = 0.5
+tu = 0.3
 wlen = 12
 while True:
     for j in xrange(wlen):
