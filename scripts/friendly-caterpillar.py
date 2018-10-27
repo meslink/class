@@ -1,9 +1,10 @@
 #! /usr/bin/python
 
-# a friendly caterpillar says hi (and other things). run as
-#   $ python friendly-caterpillar.py
+# a friendly caterpillar says hi (and other things). in a terminal, run as
+#   python friendly-caterpillar.py
 # or, if this file has executable permission,
-#   $ ./friendly-caterpillar.py
+#   ./friendly-caterpillar.py
+# exit by typing control-c.
 
 import sys, time, random, signal
 
@@ -13,9 +14,10 @@ def scoot_back(n):
 # the friendly caterpillar says:
 def get_message():
     msgs = ['hi!','nom nom nom...dee-licious!','meep meep','hello!',
-            'what a pretty autumn day!','streeeetch','achoo!','good job!',
+            'what a pretty autumn day!','streeeetch','*achoo*','good job!',
             'hmmm, what shall i have for lunch?',
-            'i shall hop on my bi-cy-clee and be a speedy caterpillar!']
+            'i shall hop on my bi-cy-clee and be a speedy caterpillar!',
+            'type control-c and i will go do my grocery shopping']
     return msgs[random.randint(0,len(msgs)-1)]
 
 def bye():
