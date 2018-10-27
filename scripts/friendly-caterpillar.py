@@ -20,15 +20,13 @@ def get_message():
             'type control-c and i will go do my grocery shopping']
     return msgs[random.randint(0,len(msgs)-1)]
 
-def bye():
-    def call(a,b):
-        sys.stdout.write(' bye!')
-        sys.stdout.flush()
-        time.sleep(0.5)
-        scoot_back(80)
-        sys.exit(0)
-    return call
-signal.signal(signal.SIGINT, bye())
+def bye(a,b):
+    sys.stdout.write(' bye!')
+    sys.stdout.flush()
+    time.sleep(0.5)
+    scoot_back(80)
+    sys.exit(0)
+signal.signal(signal.SIGINT, bye)
 
 cs = '/\\'
 tu = 0.3
